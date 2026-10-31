@@ -1,0 +1,794 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+
+<title>APUSH Study Guide</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&family=Source+Code+Pro:wght@400;500&display=swap">
+<style>
+/* APUSH Study Guide — americana documentary aesthetic */
+/* Layout: newspaper-column feel with strong rules */
+:root {
+  --bg: #FFFFFF;
+  --bg2: #F3F1EB;
+  --fg: #1A1916;
+  --fg2: #5C5850;
+  --rule: #C8C4B4;
+  --navy: #1C2E4A;
+  --red: #8B1A1A;
+  --gold: #9A7020;
+  --green: #2A4E30;
+  --callout-bg: #EEF0F5;
+  --tag-bg: #E4E0D4;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #131210;
+    --bg2: #1C1B18;
+    --fg: #EDEAE0;
+    --fg2: #9A9488;
+    --rule: #38352C;
+    --navy: #6A90C0;
+    --red: #C06060;
+    --gold: #D4A840;
+    --green: #6A9E7A;
+    --callout-bg: #1E2230;
+    --tag-bg: #2C2A22;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #131210;
+  --bg2: #1C1B18;
+  --fg: #EDEAE0;
+  --fg2: #9A9488;
+  --rule: #38352C;
+  --navy: #6A90C0;
+  --red: #C06060;
+  --gold: #D4A840;
+  --green: #6A9E7A;
+  --callout-bg: #1E2230;
+  --tag-bg: #2C2A22;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  font-size: 14.5px;
+  line-height: 1.65;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0;
+}
+
+.page { max-width: 880px; margin: 0 auto; padding-block: 44px 80px; }
+
+/* COVER */
+.cover {
+  border-bottom: 3px double var(--fg);
+  padding-bottom: 24px;
+  margin-bottom: 36px;
+  text-align: center;
+}
+.masthead {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.cover h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(28px, 5vw, 52px);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -.01em;
+  text-wrap: balance;
+  margin-bottom: 10px;
+}
+.cover-sub {
+  font-size: 13px;
+  color: var(--fg2);
+  margin-bottom: 16px;
+}
+.cover-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+.tag {
+  background: var(--tag-bg);
+  font-family: 'Source Code Pro', monospace;
+  font-size: 10px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 2px;
+  color: var(--fg2);
+}
+
+/* UNIT SECTION */
+.unit {
+  margin-bottom: 52px;
+}
+.unit-head {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 14px;
+  align-items: start;
+  border-bottom: 2px solid var(--fg);
+  padding-bottom: 12px;
+  margin-bottom: 18px;
+}
+.unit-num {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--rule);
+  line-height: 1;
+}
+.unit-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(15px, 2.8vw, 21px);
+  font-weight: 700;
+  text-wrap: balance;
+  margin-bottom: 3px;
+}
+.unit-period {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: .05em;
+}
+.unit-pct {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 11px;
+  color: var(--fg2);
+  white-space: nowrap;
+  padding-top: 4px;
+}
+
+/* TOPICS + PEOPLE GRID */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+@media (max-width: 520px) { .two-col { grid-template-columns: 1fr; } }
+
+.info-box {
+  background: var(--bg2);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 13px 15px;
+}
+.info-box h4 {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--rule);
+}
+.info-box h4.red { color: var(--red); }
+.info-box h4.gold { color: var(--gold); }
+.info-box h4.green { color: var(--green); }
+
+.info-box ul { list-style: none; padding: 0; }
+.info-box ul li {
+  font-size: 13px;
+  padding: 3px 0 3px 14px;
+  position: relative;
+  line-height: 1.45;
+  border-bottom: 1px dotted var(--rule);
+}
+.info-box ul li:last-child { border-bottom: none; }
+.info-box ul li::before {
+  content: '·';
+  position: absolute;
+  left: 3px;
+  color: var(--navy);
+  font-weight: 700;
+}
+
+/* KEY TERMS */
+.terms-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+.term {
+  background: var(--tag-bg);
+  border: 1px solid var(--rule);
+  font-size: 11.5px;
+  padding: 2px 9px;
+  border-radius: 2px;
+  color: var(--fg);
+}
+
+/* CAUSATION */
+.causation {
+  background: var(--callout-bg);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--navy);
+  padding: 12px 16px;
+  border-radius: 0 3px 3px 0;
+}
+.causation h4 {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.causation p { font-size: 13px; color: var(--fg2); line-height: 1.6; }
+
+/* NOTABLE EVENTS */
+.events-list {
+  background: var(--bg2);
+  border: 1px solid var(--rule);
+  border-top: 2px solid var(--red);
+  border-radius: 0 0 3px 3px;
+  padding: 12px 15px;
+  margin-bottom: 12px;
+}
+.events-list h4 {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 8px;
+}
+.event-item {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 8px;
+  font-size: 12.5px;
+  padding: 3px 0;
+  border-bottom: 1px dotted var(--rule);
+}
+.event-item:last-child { border-bottom: none; }
+.event-date {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 11px;
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+}
+
+/* SKILLS SECTION */
+.skills-footer {
+  background: var(--bg2);
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--green);
+  border-radius: 0 0 4px 4px;
+  padding: 16px 18px;
+  margin-top: 44px;
+}
+.skills-footer h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: var(--green);
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+.skill-item { }
+.skill-item strong {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  display: block;
+  color: var(--green);
+  margin-bottom: 3px;
+}
+.skill-item p { font-size: 12px; color: var(--fg2); line-height: 1.4; }
+
+/* THEME BTN */
+.theme-btn {
+  position: sticky;
+  top: max(14px, env(safe-area-inset-top, 0px));
+  float: right;
+  background: var(--bg2); border: 1px solid var(--rule);
+  color: var(--fg); width: 32px; height: 32px; border-radius: 50%;
+  cursor: pointer; font-size: 14px; display: flex;
+  align-items: center; justify-content: center; z-index: 100;
+}
+
+/* FOOTER */
+.footer {
+  border-top: 3px double var(--fg);
+  padding-top: 16px; margin-top: 48px;
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+}
+.footer-left { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 12px; color: var(--fg2); }
+.footer-right { font-family: 'Source Code Pro', monospace; font-size: 9px; color: var(--fg2); letter-spacing: .1em; text-align: right; }
+</style>
+
+<button class="theme-btn" id="themeBtn">☀</button>
+
+<div class="page">
+  <div class="cover">
+    <p class="masthead">Enrichuth · AP Teaching Resource</p>
+    <h1>AP U.S. History<br>Complete Study Guide</h1>
+    <p class="cover-sub">All 9 Units · 1491 to Present · Key Events, People, Terms &amp; Themes</p>
+    <div class="cover-tags">
+      <span class="tag">Units 1–9</span>
+      <span class="tag">1491–Present</span>
+      <span class="tag">Key Terms</span>
+      <span class="tag">Supreme Court Cases</span>
+      <span class="tag">SAQ + DBQ Ready</span>
+    </div>
+  </div>
+
+  <!-- UNIT 1 -->
+  <div class="unit">
+    <div class="unit-head">
+      <div class="unit-num">1</div>
+      <div>
+        <div class="unit-title">Period of Contact &amp; Conquest</div>
+        <div class="unit-period">1491–1607 · 4–6% of exam</div>
+      </div>
+      <div class="unit-pct">~5%</div>
+    </div>
+    <div class="two-col">
+      <div class="info-box">
+        <h4>Key Topics</h4>
+        <ul>
+          <li>Diverse Native American cultures before 1492 (Pueblo, Mississippian, Iroquois)</li>
+          <li>Columbus's voyages; Spanish exploration &amp; conquest</li>
+          <li>Columbian Exchange: crops, animals, disease</li>
+          <li>Spanish encomienda system &amp; Indigenous labor</li>
+          <li>Portuguese exploration of West Africa</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h4 class="red">Key People &amp; Groups</h4>
+        <ul>
+          <li>Bartolomé de las Casas (defender of Indigenous rights)</li>
+          <li>Christopher Columbus</li>
+          <li>Hernán Cortés (conquest of Aztec)</li>
+          <li>Francisco Pizarro (conquest of Inca)</li>
+          <li>The Three Sisters nations (Iroquois Confederacy)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="terms-row">
+      <span class="term">Columbian Exchange</span><span class="term">Encomienda</span>
+      <span class="term">Three Sisters</span><span class="term">Treaty of Tordesillas</span>
+      <span class="term">Pueblo Peoples</span><span class="term">Mesoamerica</span>
+    </div>
+    <div class="causation">
+      <h4>Exam Focus</h4>
+      <p>Why did European diseases devastate Native populations? How did Spanish labor systems justify conquest? Compare Native societies of the Eastern Woodlands vs. Great Plains vs. Southwest.</p>
+    </div>
+  </div>
+
+  <!-- UNIT 2 -->
+  <div class="unit">
+    <div class="unit-head">
+      <div class="unit-num">2</div>
+      <div>
+        <div class="unit-title">Colonial America</div>
+        <div class="unit-period">1607–1754 · 6–8% of exam</div>
+      </div>
+    </div>
+    <div class="two-col">
+      <div class="info-box">
+        <h4>Key Topics</h4>
+        <ul>
+          <li>Chesapeake colonies (tobacco, indentured servants → slavery)</li>
+          <li>New England: Puritan society, town meetings</li>
+          <li>Middle Colonies: diversity, religious tolerance</li>
+          <li>First Great Awakening (religious revival)</li>
+          <li>Navigation Acts; mercantilism; salutary neglect</li>
+          <li>Bacon's Rebellion (1676) — class conflict &amp; racial codification</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h4 class="red">Key Events</h4>
+        <ul>
+          <li>Jamestown founded 1607</li>
+          <li>Mayflower Compact 1620</li>
+          <li>Virginia House of Burgesses 1619</li>
+          <li>Maryland Toleration Act 1649</li>
+          <li>King Philip's War 1675–76</li>
+          <li>Bacon's Rebellion 1676</li>
+          <li>Stono Rebellion 1739</li>
+        </ul>
+      </div>
+    </div>
+    <div class="terms-row">
+      <span class="term">Indentured Servitude</span><span class="term">Middle Passage</span>
+      <span class="term">Salutary Neglect</span><span class="term">Mercantilism</span>
+      <span class="term">Great Awakening</span><span class="term">Triangular Trade</span>
+      <span class="term">Chattel Slavery</span>
+    </div>
+    <div class="causation">
+      <h4>Exam Focus</h4>
+      <p>How did Bacon's Rebellion shift Virginia from indentured servants to enslaved Africans? Compare the social structures of New England vs. Chesapeake colonies. Why did salutary neglect create conditions for revolution?</p>
+    </div>
+  </div>
+
+  <!-- UNIT 3 -->
+  <div class="unit">
+    <div class="unit-head">
+      <div class="unit-num">3</div>
+      <div>
+        <div class="unit-title">Revolution &amp; the New Nation</div>
+        <div class="unit-period">1754–1800 · 10–17% of exam</div>
+      </div>
+    </div>
+    <div class="two-col">
+      <div class="info-box">
+        <h4>Key Topics</h4>
+        <ul>
+          <li>French &amp; Indian War → British debt → taxation</li>
+          <li>Enlightenment ideals in Declaration of Independence</li>
+          <li>Articles of Confederation's weaknesses</li>
+          <li>Constitutional Convention + ratification debate</li>
+          <li>Federalists vs. Anti-Federalists</li>
+          <li>Early republic challenges: debt, foreign threats</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h4 class="red">Key Events</h4>
+        <ul>
+          <li>Stamp Act 1765</li>
+          <li>Boston Massacre 1770</li>
+          <li>Boston Tea Party 1773</li>
+          <li>Declaration of Independence 1776</li>
+          <li>Shays' Rebellion 1786–87</li>
+          <li>Constitution ratified 1788</li>
+          <li>Bill of Rights 1791</li>
+          <li>XYZ Affair 1797</li>
+        </ul>
+      </div>
+    </div>
+    <div class="terms-row">
+      <span class="term">Republicanism</span><span class="term">Articles of Confederation</span>
+      <span class="term">3/5 Compromise</span><span class="term">Federalist Papers</span>
+      <span class="term">Bill of Rights</span><span class="term">Republican Motherhood</span>
+      <span class="term">No Taxation Without Representation</span>
+    </div>
+    <div class="causation">
+      <h4>Exam Focus</h4>
+      <p>How did Enlightenment ideas shape the Declaration of Independence? Why did the Articles of Confederation fail? Compare Federalist and Anti-Federalist views on democracy and power.</p>
+    </div>
+  </div>
+
+  <!-- UNIT 4 -->
+  <div class="unit">
+    <div class="unit-head">
+      <div class="unit-num">4</div>
+      <div>
+        <div class="unit-title">Expansion, Democracy &amp; Reform</div>
+        <div class="unit-period">1800–1848 · 10–17% of exam</div>
+      </div>
+    </div>
+    <div class="two-col">
+      <div class="info-box">
+        <h4>Key Topics</h4>
+        <ul>
+          <li>Market Revolution: canals, factories, railroads</li>
+          <li>Jacksonian Democracy: expansion of white male suffrage</li>
+          <li>Indian Removal Act (1830) &amp; Trail of Tears</li>
+          <li>Second Great Awakening → reform movements</li>
+          <li>Manifest Destiny; Texas, Mexican-American War</li>
+          <li>Seneca Falls Convention (1848): women's rights</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h4 class="red">Key Events</h4>
+        <ul>
+          <li>Erie Canal opens 1825</li>
+          <li>Missouri Compromise 1820</li>
+          <li>Nullification Crisis 1832–33</li>
+          <li>Indian Removal Act 1830</li>
+          <li>Trail of Tears 1838–39</li>
+          <li>Mexican-American War 1846–48</li>
+          <li>Seneca Falls Convention 1848</li>
+        </ul>
+      </div>
+    </div>
+    <div class="terms-row">
+      <span class="term">Jacksonian Democracy</span><span class="term">Market Revolution</span>
+      <span class="term">Manifest Destiny</span><span class="term">Nullification</span>
+      <span class="term">Abolitionism</span><span class="term">Second Great Awakening</span>
+      <span class="term">Cult of Domesticity</span>
+    </div>
+    <div class="causation">
+      <h4>Exam Focus</h4>
+      <p>Was Andrew Jackson truly democratic? Evaluate for whom. How did the Market Revolution change gender roles and create reform movements? Why was Manifest Destiny both an opportunity and a moral crisis?</p>
+    </div>
+  </div>
+
+  <!-- UNIT 5 -->
+  <div class="unit">
+    <div class="unit-head">
+      <div class="unit-num">5</div>
+      <div>
+        <div class="unit-title">Civil War &amp; Reconstruction</div>
+        <div class="unit-period">1844–1877 · 10–17% of exam</div>
+      </div>
+    </div>
+    <div class="two-col">
+      <div class="info-box">
+        <h4>Key Topics</h4>
+        <ul>
+          <li>Sectional crisis: slavery expansion debate</li>
+          <li>Kansas-Nebraska Act → "Bleeding Kansas"</li>
+          <li>Dred Scott decision (1857) — citizenship denied</li>
+          <li>Lincoln's election → Southern secession</li>
+          <li>Civil War military + home front</li>
+          <li>Radical Reconstruction: 13th–15th Amendments</li>
+          <li>Failure of Reconstruction; Redeemers; Compromise of 1877</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h4 class="red">Key Events &amp; Cases</h4>
+        <ul>
+          <li>Compromise of 1850</li>
+          <li>Fugitive Slave Act 1850</li>
+          <li>Dred Scott v. Sandford 1857</li>
+          <li>Emancipation Proclamation 1863</li>
+          <li>13th Amendment 1865 (abolition)</li>
+          <li>14th Amendment 1868 (citizenship)</li>
+          <li>15th Amendment 1870 (voting rights)</li>
+          <li>Compromise of 1877 (end of Reconstruction)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="terms-row">
+      <span class="term">Popular Sovereignty</span><span class="term">Black Codes</span>
+      <span class="term">Radical Republicans</span><span class="term">Freedmen's Bureau</span>
+      <span class="term">Sharecropping</span><span class="term">Carpetbaggers</span>
+      <span class="term">Jim Crow</span><span class="term">Lost Cause</span>
+    </div>
+    <div class="causation">
+      <h4>Exam Focus</h4>
+      <p>Why did Reconstruction fail? What were the limits of freedom after emancipation? How did the Dred Scott decision inflame sectional conflict? Evaluate Lincoln's evolving position on slavery.</p>
+    </div>
+  </div>
+
+  <!-- UNIT 6 -->
+  <div class="unit">
+    <div class="unit-head">
+      <div class="unit-num">6</div>
+      <div>
+        <div class="unit-title">The Gilded Age</div>
+        <div class="unit-period">1865–1898 · 10–17% of exam</div>
+      </div>
+    </div>
+    <div class="two-col">
+      <div class="info-box">
+        <h4>Key Topics</h4>
+        <ul>
+          <li>Industrialization: steel, railroads, oil</li>
+          <li>Carnegie (steel) / Rockefeller (oil): monopolies</li>
+          <li>"New Immigrants" from Southern/Eastern Europe</li>
+          <li>Social Darwinism vs. Social Gospel</li>
+          <li>Western expansion, Homestead Act, conflict with Plains Nations</li>
+          <li>Populist movement; farmer grievances</li>
+          <li>Plessy v. Ferguson (1896): "separate but equal"</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h4 class="red">Key Events</h4>
+        <ul>
+          <li>Transcontinental Railroad 1869</li>
+          <li>Chinese Exclusion Act 1882</li>
+          <li>Dawes Act 1887</li>
+          <li>Haymarket Affair 1886</li>
+          <li>Homestead Strike 1892</li>
+          <li>Wounded Knee 1890</li>
+          <li>Plessy v. Ferguson 1896</li>
+        </ul>
+      </div>
+    </div>
+    <div class="terms-row">
+      <span class="term">Vertical Integration</span><span class="term">Horizontal Integration</span>
+      <span class="term">Social Darwinism</span><span class="term">New Immigrants</span>
+      <span class="term">Dawes Act</span><span class="term">Populism</span>
+      <span class="term">Robber Baron</span><span class="term">Gilded Age</span>
+    </div>
+    <div class="causation">
+      <h4>Exam Focus</h4>
+      <p>How did industrialization create inequality AND opportunity? Why did Congress pass the Chinese Exclusion Act while welcoming European immigrants? How did the Populist movement reflect farmer vs. corporate tension?</p>
+    </div>
+  </div>
+
+  <!-- UNIT 7 -->
+  <div class="unit">
+    <div class="unit-head">
+      <div class="unit-num">7</div>
+      <div>
+        <div class="unit-title">Progressivism, WWI &amp; the Interwar Era</div>
+        <div class="unit-period">1890–1945 · 10–17% of exam</div>
+      </div>
+    </div>
+    <div class="two-col">
+      <div class="info-box">
+        <h4>Key Topics</h4>
+        <ul>
+          <li>Progressive Era: muckrakers, reform legislation, suffrage</li>
+          <li>TR's Square Deal; Wilson's New Freedom</li>
+          <li>U.S. imperialism: Philippines, Cuba, Panama Canal</li>
+          <li>WWI: isolationism → entry → home front changes</li>
+          <li>Great Migration; Harlem Renaissance</li>
+          <li>1920s: prosperity, Prohibition, cultural conflict</li>
+          <li>Great Depression → New Deal (FDR)</li>
+          <li>WWII: mobilization, Japanese internment, atomic bomb</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h4 class="red">Key Events &amp; Cases</h4>
+        <ul>
+          <li>19th Amendment 1920 (women's suffrage)</li>
+          <li>Panama Canal 1914</li>
+          <li>Espionage Act 1917</li>
+          <li>Schenck v. US 1919</li>
+          <li>Harlem Renaissance 1920s</li>
+          <li>Social Security Act 1935</li>
+          <li>Executive Order 9066 (internment) 1942</li>
+          <li>Korematsu v. US 1944</li>
+        </ul>
+      </div>
+    </div>
+    <div class="terms-row">
+      <span class="term">Progressivism</span><span class="term">Muckraker</span>
+      <span class="term">Roosevelt Corollary</span><span class="term">Great Migration</span>
+      <span class="term">New Deal</span><span class="term">Isolationism</span>
+      <span class="term">Court-Packing</span><span class="term">Harlem Renaissance</span>
+    </div>
+    <div class="causation">
+      <h4>Exam Focus</h4>
+      <p>How did WWI expand government power and restrict civil liberties? Why did FDR's New Deal not end the Depression? How did WWII transform women's and African Americans' roles in the economy?</p>
+    </div>
+  </div>
+
+  <!-- UNIT 8 -->
+  <div class="unit">
+    <div class="unit-head">
+      <div class="unit-num">8</div>
+      <div>
+        <div class="unit-title">Cold War &amp; Civil Rights</div>
+        <div class="unit-period">1945–1980 · 10–17% of exam</div>
+      </div>
+    </div>
+    <div class="two-col">
+      <div class="info-box">
+        <h4>Key Topics</h4>
+        <ul>
+          <li>Cold War: containment, Truman Doctrine, Marshall Plan</li>
+          <li>Korean War; McCarthy and "Red Scare"</li>
+          <li>Civil Rights Movement: NAACP, SCLC, SNCC</li>
+          <li>LBJ's Great Society: Medicare, Voting Rights Act</li>
+          <li>Vietnam War; counterculture; women's movement</li>
+          <li>Nixon, détente, Watergate</li>
+          <li>Environmental movement (Earth Day, EPA)</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h4 class="red">Key Events &amp; Cases</h4>
+        <ul>
+          <li>Brown v. Board of Education 1954</li>
+          <li>Montgomery Bus Boycott 1955–56</li>
+          <li>Civil Rights Act 1964</li>
+          <li>Voting Rights Act 1965</li>
+          <li>Gulf of Tonkin Resolution 1964</li>
+          <li>Tet Offensive 1968</li>
+          <li>Watergate 1972–74</li>
+          <li>Roe v. Wade 1973</li>
+        </ul>
+      </div>
+    </div>
+    <div class="terms-row">
+      <span class="term">Containment</span><span class="term">Truman Doctrine</span>
+      <span class="term">Marshall Plan</span><span class="term">McCarthyism</span>
+      <span class="term">Massive Resistance</span><span class="term">Great Society</span>
+      <span class="term">Imperial Presidency</span><span class="term">Détente</span>
+    </div>
+    <div class="causation">
+      <h4>Exam Focus</h4>
+      <p>How did Cold War ideology shape domestic policy and civil liberties? Why did the Civil Rights Movement succeed in 1964–65 when earlier efforts failed? Evaluate the role of Vietnam in undermining public trust in government.</p>
+    </div>
+  </div>
+
+  <!-- UNIT 9 -->
+  <div class="unit">
+    <div class="unit-head">
+      <div class="unit-num">9</div>
+      <div>
+        <div class="unit-title">Conservative Resurgence &amp; Globalization</div>
+        <div class="unit-period">1980–Present · 4–6% of exam</div>
+      </div>
+    </div>
+    <div class="two-col">
+      <div class="info-box">
+        <h4>Key Topics</h4>
+        <ul>
+          <li>Reagan Revolution: supply-side economics, deregulation</li>
+          <li>End of the Cold War; fall of Berlin Wall (1989); Soviet collapse</li>
+          <li>Clinton: globalization, NAFTA, tech boom</li>
+          <li>9/11 → War on Terror, Patriot Act, Iraq War</li>
+          <li>Economic inequality; demographic change</li>
+          <li>Technology and the digital economy</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h4 class="red">Key Events</h4>
+        <ul>
+          <li>Iran hostage crisis 1979–81</li>
+          <li>Berlin Wall falls 1989</li>
+          <li>Soviet Union collapses 1991</li>
+          <li>NAFTA signed 1993</li>
+          <li>Oklahoma City bombing 1995</li>
+          <li>9/11 attacks 2001</li>
+          <li>PATRIOT Act 2001</li>
+          <li>Iraq War 2003</li>
+        </ul>
+      </div>
+    </div>
+    <div class="terms-row">
+      <span class="term">Reagan Revolution</span><span class="term">Supply-Side Economics</span>
+      <span class="term">NAFTA</span><span class="term">Patriot Act</span>
+      <span class="term">Globalization</span><span class="term">War on Terror</span>
+    </div>
+    <div class="causation">
+      <h4>Exam Focus</h4>
+      <p>How did Reaganomics reshape the American economy and increase inequality? What caused the end of the Cold War? Evaluate the long-term consequences of the War on Terror on civil liberties and American foreign policy.</p>
+    </div>
+  </div>
+
+  <!-- SKILLS SECTION -->
+  <div class="skills-footer">
+    <h3>APUSH Historical Thinking Skills</h3>
+    <div class="skills-grid">
+      <div class="skill-item"><strong>Argumentation</strong><p>Every SAQ, LAQ, and DBQ requires a defensible thesis with supporting evidence. Practice: state claim + evidence + reasoning.</p></div>
+      <div class="skill-item"><strong>Contextualization</strong><p>Connect the event to a broader historical development. Goes BEYOND the document or prompt — describe the "bigger picture."</p></div>
+      <div class="skill-item"><strong>CCOT</strong><p>Continuity &amp; Change Over Time: what stayed the same? What changed? Identify the turning points explicitly.</p></div>
+      <div class="skill-item"><strong>Causation</strong><p>Short-term vs. long-term causes. Immediate triggers vs. underlying conditions. Effects: intended &amp; unintended.</p></div>
+      <div class="skill-item"><strong>Comparison</strong><p>Similarities AND differences. Use specific examples from both sides. Avoid generic statements.</p></div>
+      <div class="skill-item"><strong>Sourcing (DBQ)</strong><p>For each document: Historical Situation · Audience · Purpose · Point of View. Use at least 3 documents for sourcing credit.</p></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-left">Made with Enrichuth · Decorate &amp; make it yours ✦</div>
+    <div class="footer-right">AP U.S. HISTORY<br>STUDY GUIDE · UNITS 1–9</div>
+  </div>
+</div>
+
+<script>
+const btn = document.getElementById('themeBtn');
+let theme = (() => { try { return localStorage.getItem('apush-theme') || 'system'; } catch { return 'system'; } })();
+function applyTheme(t) {
+  document.documentElement.removeAttribute('data-theme');
+  if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+  if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+  btn.textContent = t === 'dark' ? '☀' : t === 'light' ? '◑' : '☾';
+}
+applyTheme(theme);
+btn.addEventListener('click', () => {
+  theme = theme === 'system' ? 'dark' : theme === 'dark' ? 'light' : 'system';
+  try { localStorage.setItem('apush-theme', theme); } catch {}
+  applyTheme(theme);
+});
+</script>
+
+</body></html>
